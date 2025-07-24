@@ -93,7 +93,7 @@ const AdminPanel = () => {
       </div>
 
       {/* Admin Actions */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* System Management */}
         <Card className="card-elevated">
           <CardHeader>
@@ -111,6 +111,27 @@ const AdminPanel = () => {
             <Button onClick={handleClearData} variant="destructive" className="w-full">
               <Shield className="h-4 w-4 mr-2" />
               Clear All Data
+            </Button>
+          </CardContent>
+        </Card>
+
+        {/* User Management */}
+        <Card className="card-elevated">
+          <CardHeader>
+            <CardTitle className="flex items-center space-x-2">
+              <Users className="h-5 w-5 text-accent" />
+              <span>User Management</span>
+            </CardTitle>
+            <CardDescription>Manage all system users</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <Button onClick={() => window.location.href = '/user-management'} className="w-full">
+              <Users className="h-4 w-4 mr-2" />
+              Manage Users
+            </Button>
+            <Button onClick={() => window.location.href = '/members'} variant="outline" className="w-full">
+              <Users className="h-4 w-4 mr-2" />
+              View Members
             </Button>
           </CardContent>
         </Card>
@@ -148,18 +169,22 @@ const AdminPanel = () => {
           <CardDescription>Common administrative tasks</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <Button variant="outline" className="h-20 flex-col space-y-2">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <Button variant="outline" className="h-20 flex-col space-y-2" onClick={() => window.location.href = '/user-management'}>
               <Users className="h-6 w-6" />
               <span>Manage Users</span>
             </Button>
-            <Button variant="outline" className="h-20 flex-col space-y-2">
+            <Button variant="outline" className="h-20 flex-col space-y-2" onClick={() => window.location.href = '/books'}>
               <BookOpen className="h-6 w-6" />
-              <span>Bulk Import Books</span>
+              <span>Manage Books</span>
             </Button>
-            <Button variant="outline" className="h-20 flex-col space-y-2">
+            <Button variant="outline" className="h-20 flex-col space-y-2" onClick={() => window.location.href = '/reports'}>
+              <Database className="h-6 w-6" />
+              <span>View Reports</span>
+            </Button>
+            <Button variant="outline" className="h-20 flex-col space-y-2" onClick={() => window.location.href = '/transactions'}>
               <Mail className="h-6 w-6" />
-              <span>Send Notifications</span>
+              <span>Transactions</span>
             </Button>
           </div>
         </CardContent>

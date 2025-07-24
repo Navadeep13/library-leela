@@ -11,7 +11,8 @@ import {
   ArrowLeftRight,
   FileText,
   Home,
-  Settings
+  Settings,
+  Shield
 } from 'lucide-react';
 
 interface NavItem {
@@ -68,6 +69,12 @@ const navItems: NavItem[] = [
     to: '/admin',
     icon: Settings,
     label: 'Admin Panel',
+    roles: ['admin']
+  },
+  {
+    to: '/user-management',
+    icon: Shield,
+    label: 'User Management',
     roles: ['admin']
   }
 ];

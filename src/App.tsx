@@ -18,6 +18,7 @@ import Reports from "@/pages/Reports";
 import AdminPanel from "@/pages/AdminPanel";
 import Profile from "@/pages/Profile";
 import Settings from "@/pages/Settings";
+import UserManagement from "@/pages/UserManagement";
 import NotFound from "@/pages/NotFound";
 
 // Initialize sample data
@@ -54,6 +55,7 @@ const App = () => (
               <Route path="book-requests" element={<BookRequests />} />
               <Route path="reports" element={<Reports />} />
               <Route path="admin" element={<AdminPanel />} />
+              <Route path="user-management" element={<UserManagement />} />
               <Route path="profile" element={<Profile />} />
               <Route path="settings" element={<Settings />} />
             </Route>
