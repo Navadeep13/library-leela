@@ -7,9 +7,17 @@ import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 import { initializeData } from "@/data/initialData";
 import MainLayout from "@/components/Layout/MainLayout";
 import Login from "@/pages/Login";
+import Register from "@/pages/Register";
 import Dashboard from "@/pages/Dashboard";
 import Books from "@/pages/Books";
 import Members from "@/pages/Members";
+import Transactions from "@/pages/Transactions";
+import MyBooks from "@/pages/MyBooks";
+import BookRequests from "@/pages/BookRequests";
+import Reports from "@/pages/Reports";
+import AdminPanel from "@/pages/AdminPanel";
+import Profile from "@/pages/Profile";
+import Settings from "@/pages/Settings";
 import NotFound from "@/pages/NotFound";
 
 // Initialize sample data
@@ -31,6 +39,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/" element={<Navigate to="/dashboard" />} />
             <Route path="/" element={
               <ProtectedRoute>
@@ -40,6 +49,13 @@ const App = () => (
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="books" element={<Books />} />
               <Route path="members" element={<Members />} />
+              <Route path="transactions" element={<Transactions />} />
+              <Route path="my-books" element={<MyBooks />} />
+              <Route path="book-requests" element={<BookRequests />} />
+              <Route path="reports" element={<Reports />} />
+              <Route path="admin" element={<AdminPanel />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path="settings" element={<Settings />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

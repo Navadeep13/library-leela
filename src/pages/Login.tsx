@@ -42,17 +42,6 @@ const Login = () => {
     }
   };
 
-  const quickLoginOptions = [
-    { role: 'Admin', email: 'admin@library.com', password: 'admin123', color: 'bg-destructive' },
-    { role: 'Librarian', email: 'librarian@library.com', password: 'lib123', color: 'bg-accent' },
-    { role: 'Member', email: 'arjun@example.com', password: 'member123', color: 'bg-secondary' }
-  ];
-
-  const fillCredentials = (email: string, password: string) => {
-    setEmail(email);
-    setPassword(password);
-  };
-
   return (
     <div className="min-h-screen gradient-hero flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-6">
@@ -120,24 +109,18 @@ const Login = () => {
               </Button>
             </form>
 
-            {/* Quick Login Options */}
-            <div className="pt-4 border-t border-border">
-              <p className="text-sm text-muted-foreground text-center mb-3">
-                Quick Login (Demo)
+            {/* Register Link */}
+            <div className="pt-4 border-t border-border text-center">
+              <p className="text-sm text-muted-foreground mb-3">
+                Don't have an account?
               </p>
-              <div className="grid grid-cols-3 gap-2">
-                {quickLoginOptions.map((option) => (
-                  <Button
-                    key={option.role}
-                    variant="outline"
-                    size="sm"
-                    onClick={() => fillCredentials(option.email, option.password)}
-                    className="text-xs"
-                  >
-                    {option.role}
-                  </Button>
-                ))}
-              </div>
+              <Button
+                variant="outline"
+                onClick={() => navigate('/register')}
+                className="w-full"
+              >
+                Create New Account
+              </Button>
             </div>
           </CardContent>
         </Card>
